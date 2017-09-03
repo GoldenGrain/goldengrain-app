@@ -1,14 +1,14 @@
 import { NavigationActions } from 'react-navigation'
 
-function navigate({ navigate }, route) {
-    navigate(route)
+function navigate({ navigate }, route, params = {}) {
+    navigate(route, params)
 }
 
-function reset({ dispatch }, routeName) {
+function reset({ dispatch }, routeName, params = {}) {
     const action = NavigationActions.reset({
         index: 0,
         actions: [
-            NavigationActions.navigate({ routeName })
+            NavigationActions.navigate({ routeName, params })
         ]
     })
     dispatch(action)

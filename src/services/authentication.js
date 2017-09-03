@@ -11,4 +11,8 @@ async function getToken() {
     return await AsyncStorage.getItem(KEY_TOKEN)
 }
 
-export { isLogged, getToken }
+async function logout() {
+    return await AsyncStorage.removeItem(KEY_TOKEN)
+}
+
+export { isLogged, getToken, logout }
